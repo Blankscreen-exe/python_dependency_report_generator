@@ -169,9 +169,6 @@ class generate_dependency_docx():
             headers[index].paragraphs[0].runs[0].font.name = self.table_header_font_family 
             headers[index].paragraphs[0].runs[0].font.color.rgb = self.font_header_color
 
-        # Define alternating row colors
-        colors = self.alt_table_row_color
-
         # Populate the table with the dependencies
         for index, dependency in enumerate(dependencies):
             row_cells = table.add_row().cells
@@ -198,6 +195,9 @@ class generate_dependency_docx():
             row_cells[5].text = dependency['homepage_url'][1]
             row_cells[5].paragraphs[0].runs[0].font.name = self.table_font_family 
             row_cells[5].paragraphs[0].runs[0].font.color.rgb = self.font_normal_color if dependency['homepage_url'][0] else self.font_not_found_color
+            
+            # Define alternating row colors
+            colors = self.alt_table_row_color
             
             # Apply alternating row colors
             color_index = index % len(colors)
