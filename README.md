@@ -18,7 +18,7 @@ python3 ./gen_docx.py
 
 ## Preview
 The generated document will look something like this
-
+![Alt text](docs/img/preview.png)
 
 ## Further Development
 - [ ] add setter methods for theme customizations
