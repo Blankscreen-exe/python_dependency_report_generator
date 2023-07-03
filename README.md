@@ -17,7 +17,7 @@ pip3 install python-docx
 python3 ./gen_docx.py 
 ```
 5. and you will see a file named `dependencies_report.docx` created in the same directory. 
-6. For a some customizations you can use
+6. For some customizations you can use
 ```python
 # ./your_file.py
 
@@ -42,6 +42,8 @@ The generated document will look something like this
 ![Alt text](docs/img/preview.png)
 
 ## Further Development
+I'm working on making this more customizable and user friendly. Might even make a little framework out of it. Feel free to let me know what you would like to see in this project.
+
 - [ ] add setter methods for theme customizations
 - [ ] add layout customizations
 - [ ] convert it into a python package
