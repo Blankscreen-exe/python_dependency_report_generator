@@ -11,6 +11,7 @@ class generate_dependency_docx():
 
     def __init__(self) -> None:
         self.document_title = 'Project Dependencies'
+        self.document_description = ''
         self.header_font_size = 13
         self.table_header_font_family = 'Calibri'
         self.column_headers = [
@@ -27,7 +28,13 @@ class generate_dependency_docx():
         self.font_highlight_color = RGBColor(0x0E, 0x8D, 0xC6)
         self.font_not_found_color = RGBColor(255, 0, 0)
         self.font_header_color = RGBColor(0, 120, 156)
-        
+    
+    def set_title(self, title):
+        self.document_title = title
+    
+    def set_description(self, desc):
+        self.document_description = desc
+
     def get_package_license(self, package_name) -> tuple:
         """
         Retrieves the license information for a given package.
@@ -146,7 +153,12 @@ class generate_dependency_docx():
             None
         """
         doc = Document()
+
+        # Add a heading
         doc.add_heading(self.document_title, level=0 )
+
+        # Add a paragraph under the heading
+        doc.add_paragraph(self.document_description)
 
         # Create a table for the dependencies
         num_columns = len(self.column_headers)
